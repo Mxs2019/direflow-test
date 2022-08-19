@@ -5,20 +5,20 @@ interface IProps {
   title: string;
 }
 
-const App: FC<IProps> = ({ title }) => {
+const App: FC<IProps> = ({ title, ...otherProps }) => {
   const dispatch = useContext(EventContext);
 
   console.log(title);
   return (
     <div>
-      <div>Hello World</div>
+      <div>Hello World - Pass in a title prop and watch it change.</div>
       <div>{title}</div>
     </div>
   );
 };
 
 App.defaultProps = {
-  title: "Direflow Test",
+  title: "Sample Title",
 };
 
 export default App;
